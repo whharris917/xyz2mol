@@ -7,7 +7,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 import itertools
 from rdkit.Chem import rdmolops
-from rdkit.Chem import rdEHTTools #requires RDKit 2019.9.1 or later
+#from rdkit.Chem import rdEHTTools #requires RDKit 2019.9.1 or later
 
 from collections import defaultdict
 import copy
@@ -258,6 +258,7 @@ def AC2BO(AC,atomicNumList,charge,charged_fragments,quick):
     # TODO
     atomic_valence = defaultdict(list)
     atomic_valence[1] = [1]
+    atomic_valence[5] = [3] ##### edited by Wil 
     atomic_valence[6] = [4]
     atomic_valence[7] = [3,4]
     atomic_valence[8] = [2,1]
@@ -273,6 +274,7 @@ def AC2BO(AC,atomicNumList,charge,charged_fragments,quick):
 
     atomic_valence_electrons = {}
     atomic_valence_electrons[1] = 1
+    atomic_valence_electrons[5] = 3 ##### edited by Wil 
     atomic_valence_electrons[6] = 4
     atomic_valence_electrons[7] = 5
     atomic_valence_electrons[8] = 6
